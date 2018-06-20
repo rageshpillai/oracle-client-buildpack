@@ -40,11 +40,12 @@ cp $BP_DIR/profile/* $BUILD_DIR/.profile.d/
 
 echo "-----> Oracle Client Installed"
 echo "------->installing npm"
-npm config delete prefix
+
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 nvm install stable
+npm config delete prefix
 echo "------->installed nvm"
 echo "------->installing yarn"
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -; \
